@@ -153,7 +153,7 @@ module SSD1306
           bits = 0
           for bit in [0, 1, 2, 3, 4, 5, 6, 7]
             bits = bits << 1
-            bits |= pix[(page*8*@width) + x + ((7-bit)*@width)] <= 33 ? 0 : 1
+            bits |= pix[(page*8*@width) + x + ((7-bit)*@width)] <= 128 ? 0 : 1
           end
           @buffer[index] = bits
           index += 1
