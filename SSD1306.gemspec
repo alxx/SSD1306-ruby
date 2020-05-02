@@ -6,8 +6,8 @@ require 'SSD1306/version'
 Gem::Specification.new do |spec|
   spec.name          = "SSD1306"
   spec.version       = SSD1306::VERSION
-  spec.authors       = ["Xavier Bick", "Jacob Killelea"]
-  spec.email         = ["fxb9500@gmail.com", "Jkillelea@protonmail.ch"]
+  spec.authors       = ["Xavier Bick", "Jacob Killelea", "Alex Deva"]
+  spec.email         = ["fxb9500@gmail.com", "Jkillelea@protonmail.ch", "jag@alxx.se"]
   spec.license       = 'MIT'
 
   spec.summary       = %q{A library for the SSD1306 OLED Display}
@@ -30,5 +30,11 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "minitest", "~> 5.0"
 
   spec.add_runtime_dependency "i2c", ">= 0.4.0"
-  spec.add_runtime_dependency "rmagick", "~> 2.14"
+
+  # Removed this dependency as the dependency ImageMagick was literally a hundred times bigger
+  # than my whole project (for example it required the whole of Python...)
+  #spec.add_runtime_dependency "rmagick", "~> 2.14"
+
+  # Replaced it with the very lightweight OilyPNG
+  spec.add_runtime_dependency "oily_png", "~> 1.2"
 end

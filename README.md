@@ -1,7 +1,5 @@
 # SSD1306
 
-[![Gem Version](https://badge.fury.io/rb/SSD1306.svg)](https://badge.fury.io/rb/SSD1306) [![Build Status](https://travis-ci.org/zeiv/SSD1306-ruby.svg?branch=master)](https://travis-ci.org/zeiv/SSD1306-ruby) [![Code Climate](https://codeclimate.com/github/zeiv/SSD1306-ruby/badges/gpa.svg)](https://codeclimate.com/github/zeiv/SSD1306-ruby) [![Test Coverage](https://codeclimate.com/github/zeiv/SSD1306-ruby/badges/coverage.svg)](https://codeclimate.com/github/zeiv/SSD1306-ruby/coverage) [![Inline docs](http://inch-ci.org/github/zeiv/SSD1306-ruby.svg?branch=master)](http://inch-ci.org/github/zeiv/SSD1306-ruby)
-
 This is a library for the SSD1306 OLED Display written in Ruby.  It was inspired by Adafruit's libraries written in Python and C.  Much of the original logic was simply ported from their Python library, but in addition this Ruby library provides additional functionality such as `print` and `println` helpers.  The library also features simple image parsing.
 
 ## Installation
@@ -45,13 +43,13 @@ disp.println ip_address
 disp.display!
 ```
 
-You can also display monochrome images:
+You can also display monochrome PNG images:
 
 ```ruby
-include Magick  # RMagick is a dependency
-image = Image.read("path/to/my/image.png").first # Image.read returns an array
+require 'oily_png'  # OilyPng (which also installs ChunkyPNG) is a dependency
+image = ChunkyPNG::Image.from_file('path/to/png/file.png')
 
-disp.image(image) # Pass in an RMagick image object
+disp.image(image) # Pass in the ChunkyPNG image object. Not the file path so you can maybe reuse the same PNG object several times without loading it each time.
 disp.display!
 ```
 

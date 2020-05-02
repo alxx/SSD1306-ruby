@@ -144,9 +144,9 @@ module SSD1306
       @interface.write @address, control, @buffer.pack('c*')
     end
 
+    # i2=ChunkyPNG::Image.from_file('/Users/alxx/Pictures/vladwtzw.png')
     def image(image)
-      image.image_type = BilevelType
-      pix = image.export_pixels(0, 0, @width, @height, 'I')
+      pix = image.to_grayscale_stream.chars.map { |c| c.ord }
       index = 0
       for page in 0...@pages
         for x in 0...@width
