@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{A library for the SSD1306 OLED Display}
   spec.description   = %q{Use this library to interface to an SSD1306 OLED via I2C or SPI.  It was developed with the Raspberry Pi in mind, but should work on any device with I2C or SPI.}
-  spec.homepage      = "https://github.com/zeiv/SSD1306-ruby"
+  spec.homepage      = "https://github.com/alxx/SSD1306-ruby"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.
