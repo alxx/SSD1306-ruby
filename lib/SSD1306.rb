@@ -6,4 +6,4 @@ require 'SSD1306/font'
 require 'SSD1306/cursor'
 require 'SSD1306/display'
 
-puts "AAAAAAAAAAAAAA"
+puts "AAAAAAAAAAAAAABB"
